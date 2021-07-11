@@ -15,15 +15,7 @@ button {
 
 body {
     font-size: 18px;
-    font-family: -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    'Open Sans',
-    'Helvetica Neue',
+    font-family: 'Poppins',
     sans-serif;
 }
 
@@ -39,17 +31,15 @@ body {
     align-items: center;
 }
 
-#nav-logo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #fbfbff;
+#nav-logo h3 {
+    font-size: 30px;
+    font-style: italic;
 }
 
 #nav-center {
     display: flex;
-    flex-basis: 30em;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    flex-basis: 28em;
 }
 
 #nav-right {
@@ -71,6 +61,44 @@ body {
     display: none;
 }
 
+#nav-menu {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    background-color: transparent;
+    height: 35px;
+    width: 35px;
+    display: none;
+}
+
+.bar {
+    height: 4px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 5px;
+    background-color: #f0f0f5;
+}
+
+#bar1 {
+    transform: translateY(-4px);
+}
+
+#bar3 {
+    transform: translateY(4px);
+}
+
+.change-bar-1 {
+    transform: rotateY(-55deg);
+    transition: ease 0.3s;
+    background-color: #b80c09;
+}
+
+.change-bar-3 {
+    transform: rotateY(75deg);
+    transition: ease 0.3s;
+    background-color: #b80c09;
+}
+
 #banner {
     position: relative;
     height: 80vh;
@@ -78,17 +106,10 @@ body {
     padding: 0 10%;
 }
 
-/* #banner::after {
-    content: "";
-    height: 80vh;
-    transform: rotate(-70deg);
-    background-color: #000000;
-    width: 100vw;
-} */
-
 #banner-txt {
     position: absolute;
     top: 23%;
+    font-style: italic;
 }
 
 #banner h3 {
@@ -210,7 +231,7 @@ body {
 }
 
 #footer {
-    background-color: #040f16;
+    background-color: #000000;
     display: flex;
     justify-content: space-around;
     height: 300px;
@@ -232,6 +253,10 @@ body {
     padding: 10px 0;
     font-size: 23px;
     color: #b80c09;
+}
+
+.footer-header-label-1 {
+    font-size: 30px;
 }
 
 #footer .footer-header-label-2 {
@@ -268,15 +293,36 @@ body {
     color: #fbfbff;
 }
 
-@media(max-width: 780px){
-    #nav-bar {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        height: auto;
+@media(max-width:1024px){
+    #nav-menu {
+        display: initial;
     }
 
+    #nav-center {
+        display: none;
+    }
+
+    #nav-right {
+        display: none;
+    }
+
+    #nav-bar {
+        display: flex;
+        align-items: center;
+    }
+
+    #banner {
+        padding: 0 5%;
+    }
+
+    #banner img {
+        width: 100%;
+        float: none;
+        object-fit: contain;
+    }
+}
+
+@media(max-width: 780px){
     #footer {
         display: flex;
         flex-direction: column;
@@ -284,33 +330,8 @@ body {
         margin: 0px auto;
     }
 
-    #nav-bar {
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-    }
-
-    #nav-center {
-        display: flex;
-        flex-direction: column;
-        flex-basis: unset;
-        align-items: flex-end;
-    }
-
-    #nav-center .nav-link {
-        margin: 10px 0;
-    }
-
-    #nav-right {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-end;
-    }
-
-    #nav-search-input {
-        margin-right: 0px;
-        margin: 10px 0;
+    #banner-txt h3 {
+        line-height: 50px;
     }
 }
 
@@ -340,6 +361,10 @@ body {
 
 @media(max-width: 420px){
 
+    #header {
+        padding: 15px 40px;
+    }
+
     #banner-txt {
         position: absolute;
         top: 80%;
@@ -348,22 +373,17 @@ body {
 
     #banner h3 {
         font-size: 30px;
-        line-height: 30px;
+        line-height: 25px;
     }
 
     .footer-header-label-2 {
         margin-top: 10px;
     }
 
-    #banner img {
-        width: 100%;
-        float: none;
-        object-fit: contain;
-    }
+    
 
     #banner {
         height: 70vh;
-        background-color: #000000;
     }
 
     #products-nav {
@@ -386,7 +406,47 @@ body {
     }
 
     #main {
-        margin: 20px 0;
+        margin: 40px 0;
     }
 
+    #info-area-right {
+        display: none;
+    }
+}
+
+@media(max-width: 320px){
+    #nav-logo h3 {
+        font-size: 22px;
+    }
+
+    #nav-menu {
+        height: 25px;
+        width: 30px;
+    }
+
+    .bar {
+        height: 2px;
+        margin: 4px;
+    }
+
+    #footer h2 {
+        font-size: 22px;
+    }
+
+    .footer-header-label-1 {
+        font-size: 30px;
+    }
+
+    #footer .footer-header-label-2 {
+        line-height: 20px;
+    }
+
+    #info-area-left h3 {
+        font-size: 24px;
+    }
+
+    #info-area-left p {
+        font-size: 18px;
+        width: 100%;
+    }
 }

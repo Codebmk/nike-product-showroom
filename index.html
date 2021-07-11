@@ -5,19 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Nike | Show room</title>
+    <title>Sneakerville | Shop your dream sneakers here</title>
 </head>
 <body>
     <div id="wrapper">
         <header id="header">
             <nav id="nav-bar">
-                <div id="nav-logo"></div>
+                <div id="nav-logo"><h3>Sneakerville.</h3></div>
+                <button type="button" id="nav-menu">
+                    <div class="bar" id="bar1"></div>
+                    <div class="bar" id="bar2"></div>
+                    <div class="bar" id="bar3"></div>
+                </button>
                 <div id="nav-center">
                     <span class='nav-link'>Home</span>
-                    <span class='nav-link'>Bachelor</span>
+                    <span class='nav-link'>Trending</span>
                     <span class='nav-link'>Sport</span>
                     <span class='nav-link'>New Releases</span>
-                    <span class='nav-link'>Customise</span>
                 </div>
                 <div id="nav-right">
                     <form id="nav-search">
@@ -31,7 +35,7 @@
         <div id="banner">
             <img src="images/air-max-1.jpg" id="banner-img" alt="White Nike Air Max Shoes"/>
             <div id="banner-txt">
-                <h3>NIKE AIR<br/>JORDAN</h3>
+                <h3>AIR<br/>JORDAN</h3>
             </div>
         </div>
         <div id="info-area">
@@ -57,47 +61,47 @@
             </div>
             <div id="products-display">
                 <div class="product-item">
-                    <img src="images/air-max-1.jpg" class="product-img"/>
+                    <img src="images/eye.jpg" class="product-img"/>
                     <h3>Nike Boom</h3>
                     <p>$120</p>
                 </div>
                 <div class="product-item">
-                    <img src="images/jade.jpg" class="product-img"/>
+                    <img src="images/sport.jpg" class="product-img"/>
                     <h3>Nike Boom</h3>
                     <p>$120</p>
                 </div>
                 <div class="product-item">
-                    <img src="images/revolt.jpg" class="product-img"/>
+                    <img src="images/eagle.jpg" class="product-img"/>
                     <h3>Nike Boom</h3>
                     <p>$120</p>
                 </div>
                 <div class="product-item">
-                    <img src="images/air-max-1.jpg" class="product-img"/>
+                    <img src="images/paul.jpg" class="product-img"/>
                     <h3>Nike Boom</h3>
                     <p>$120</p>
                 </div>
                 <div class="product-item">
-                    <img src="images/jade.jpg" class="product-img"/>
+                    <img src="images/happy.jpg" class="product-img"/>
                     <h3>Nike Boom</h3>
                     <p>$120</p>
                 </div>
                 <div class="product-item">
-                    <img src="images/revolt.jpg" class="product-img"/>
+                    <img src="images/jerry.jpg" class="product-img"/>
                     <h3>Nike Boom</h3>
                     <p>$120</p>
                 </div>
                 <div class="product-item">
-                    <img src="images/air-max-1.jpg" class="product-img"/>
+                    <img src="images/tom.jpg" class="product-img"/>
                     <h3>Nike Boom</h3>
                     <p>$120</p>
                 </div>
                 <div class="product-item">
-                    <img src="images/jade.jpg" class="product-img"/>
+                    <img src="images/yeepy.jpg" class="product-img"/>
                     <h3>Nike Boom</h3>
                     <p>$120</p>
                 </div>
                 <div class="product-item">
-                    <img src="images/revolt.jpg" class="product-img"/>
+                    <img src="images/mossy.jpg" class="product-img"/>
                     <h3>Nike Boom</h3>
                     <p>$120</p>
                 </div>
@@ -105,11 +109,11 @@
         </main>
         <footer id="footer">
             <div id="footer-right">
-                <h2 class="footer-header-label-1">NIKE WEAR</h2>
+                <h2 class="footer-header-label-1">Sneakerville.</h2>
                 <p>Women</p>
                 <p>Kids</p>
                 <p>Men</p>
-                <p>Apparel</p>
+                <p>Sport</p>
             </div>
             <form id="footer-form">
                 <h2 class="footer-header-label-2">Want to reach out to us?</h2>
@@ -126,7 +130,10 @@
         </footer>
     </div>
     <script>
-        
+        document.getElementById("nav-menu").addEventListener("click",()=>{
+            document.getElementById("bar1").classList.toggle("change-bar-1");
+            document.getElementById("bar3").classList.toggle("change-bar-3");
+        });
     </script>
 </body>
 </html>
