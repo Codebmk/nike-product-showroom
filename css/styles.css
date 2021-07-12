@@ -20,9 +20,11 @@ body {
 }
 
 #header {
+    position: relative;
     padding: 15px 50px;
     background-color: #000000;
     color: #fbfbff;
+    z-index: 3;
 }
 
 #nav-bar {
@@ -40,6 +42,30 @@ body {
     display: flex;
     justify-content: space-between;
     flex-basis: 28em;
+    z-index: 2;
+}
+
+#nav-center.nav-center-toggle-show {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-basis: unset;
+    background-color: #b80c09;
+    color: #fbfbff;
+    transition: 0.3s ease-out;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 80%;
+    height: 100vh;
+    z-index: 2;
+}
+
+.nav-center-toggle-show .nav-link {
+    padding: 10px 15px;
+    border-bottom: 1px solid #f0f0f5;
+    font-size: 18px;
 }
 
 #nav-right {
@@ -69,34 +95,35 @@ body {
     height: 35px;
     width: 35px;
     display: none;
+    z-index: 1;
 }
 
 .bar {
     height: 4px;
     width: 100%;
     border-radius: 10px;
-    margin: 5px;
     background-color: #f0f0f5;
+    transition: ease 0.3s;
 }
 
-#bar1 {
+.bar1 {
     transform: translateY(-4px);
 }
 
-#bar3 {
+.bar3 {
     transform: translateY(4px);
 }
 
-.change-bar-1 {
-    transform: rotateY(-55deg);
-    transition: ease 0.3s;
-    background-color: #b80c09;
+.change-bar .bar1{
+    transform: translateY(4px) rotateZ(-45deg);
 }
 
-.change-bar-3 {
-    transform: rotateY(75deg);
-    transition: ease 0.3s;
-    background-color: #b80c09;
+.change-bar .bar3 {
+    transform: translateY(-4px) rotate(45deg);
+}
+
+.change-bar .bar2 {
+    opacity: 0;
 }
 
 #banner {
@@ -333,6 +360,7 @@ body {
     #banner-txt h3 {
         line-height: 50px;
     }
+
 }
 
 @media(max-width: 620px){
@@ -363,6 +391,15 @@ body {
 
     #header {
         padding: 15px 40px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    #nav-bar {
+        display: flex;
+        justify-content: space-between;
     }
 
     #banner-txt {
@@ -379,8 +416,6 @@ body {
     .footer-header-label-2 {
         margin-top: 10px;
     }
-
-    
 
     #banner {
         height: 70vh;
@@ -415,18 +450,12 @@ body {
 }
 
 @media(max-width: 320px){
+    #header {
+        padding: 15px 30px;
+    }
+
     #nav-logo h3 {
         font-size: 22px;
-    }
-
-    #nav-menu {
-        height: 25px;
-        width: 30px;
-    }
-
-    .bar {
-        height: 2px;
-        margin: 4px;
     }
 
     #footer h2 {
